@@ -45,5 +45,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: karoo-climblap-debug
-          path: path: karoo-climblap/app/build/outputs/apk/debug/*.apk
+          path: karoo-climblap/app/build/outputs/apk/debug/*.apk
           retention-days: 30
