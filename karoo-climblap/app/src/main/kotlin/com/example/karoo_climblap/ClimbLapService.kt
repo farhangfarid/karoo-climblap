@@ -245,7 +245,7 @@ class ClimbLapService(
             return
         }
         lastLapAt = now
-        karooSystem.dispatch(MarkLap())
+        karooSystem.dispatch(MarkLap)
         Log.i(TAG, "MarkLap dispatched ✓ ($reason)")
     }
 }
