@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Simple mountain silhouette icon representing a climb -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Dark background circle -->
+    <path
+        android:fillColor="#1A1A2E"
+        android:pathData="M0,0 L108,0 L108,108 L0,108 Z" />
+    <!-- Mountain peak (climb symbol) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,18 L82,72 L26,72 Z" />
+    <!-- Small secondary peak -->
+    <path
+        android:fillColor="#CCCCCC"
+        android:pathData="M30,72 L46,44 L62,72 Z" />
+    <!-- Lap marker lines at base and peak -->
+    <path
+        android:strokeColor="#FF6B35"
+        android:strokeWidth="3"
+        android:pathData="M20,72 L88,72"
+        android:fillColor="#00000000" />
+    <path
+        android:strokeColor="#FF6B35"
+        android:strokeWidth="3"
+        android:pathData="M46,18 L62,18"
+        android:fillColor="#00000000" />
+</vector>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Required so the extension can run as a foreground service and survive
+         in the background while you ride. -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:icon="@drawable/ic_launcher"
+        android:theme="@style/Theme.KarooClimbLap">
+
+        <!-- The settings screen — shown when you open the app from the Karoo menu -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- The extension background service.
+             The metadata block tells the Karoo system this is a karoo-ext extension. -->
+        <service
+            android:name=".ClimbLapExtension"
+            android:exported="true"
+            android:foregroundServiceType="dataSync">
+            <intent-filter>
+                <action android:name="io.hammerhead.karooext.KAROO_EXTENSION" />
+            </intent-filter>
+            <!-- Points to res/xml/extension_info.xml which declares our extension ID -->
+            <meta-data
+                android:name="io.hammerhead.karooext.EXTENSION_INFO"
+                android:resource="@xml/extension_info" />
+        </service>
+
+        <!-- Auto-start the extension when the Karoo boots -->
+        <receiver
+            android:name=".BootReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+</manifest>

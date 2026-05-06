@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Registers this app as a Karoo extension.
+  The id must be unique — matches the ID passed to KarooExtension() in ClimbLapExtension.kt.
+  No custom DataTypes or devices declared — this extension only consumes existing
+  Karoo streams (NavigationState, DISTANCE_TO_DESTINATION) and dispatches MarkLap.
+-->
+<ExtensionInfo
+    id="com.example.karoo_climblap"
+    displayName="@string/app_name"
+    scansDevices="false"
+    mapLayer="false"
+    fitFile="false">
+</ExtensionInfo>
